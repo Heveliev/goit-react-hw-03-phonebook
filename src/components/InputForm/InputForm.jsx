@@ -37,36 +37,6 @@ class InputForm extends React.Component{
     render(){
         return(
             <Box  onSubmit={this.handleSubmit}>
-
-              {/* 
-              Input в папке components/Input/Input.jsx
-
-              Input:const Input = ({value,onChange,type,pattern,name,title,titleBox}) =>{
-                  return(<>
-                  <Title>{titleBox}
-                  <ContactInput
-                  value={value}
-                  onChange={onChange}
-                  type={type}
-                  pattern={pattern}
-                  name={name}
-                  title={title}
-                  required/></Title>
-                  </> 
-                  data в папке src/data/data.json
-                  data: [{
-                      "titleBox": "Name",
-                      "type":"text",
-                      "name": "name",
-                      "pattern": "^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$",
-                      "title": "Name may contain only letters, apostrophe, dash and spaces. For example Adrian,Jacob Mercer, Charles de Batz de Castelmore d'Artagnan" },
-                      {
-                      "titleBox": "Number",
-                      "type":"tel",
-                      "name":"number",
-                      "pattern": "[0-9]{3}-[0-9]{2}-[0-9]{2}",
-                      "title":"222-22-22"}]
-                      */}
             {data.map(d=>(<Input 
             key={d.name}
             onChange={this.handleInputChange}
@@ -77,21 +47,6 @@ class InputForm extends React.Component{
             title={d.title}
             titleBox={d.titleBox} 
             />))}
-            {/* Btn в папке components/InutForm/InutForm.styled.jsx 
-            Btn:onst Btn = styled.button`
-                width:100px;
-                display:block;
-                background-color:#FFCCE5;
-                border:none;
-                border-radius:4px;
-                padding:10px;
-                cursor:pointer;
-                :hover,
-                :focus{
-                    border:2px solid #00FFFF;
-                }
-
-                `;*/}
             <Btn type="submit">Add contact</Btn>
             </Box>
         )

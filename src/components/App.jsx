@@ -55,6 +55,20 @@ this.setState(prevState=>({
 )
 }
 
+componentDidMount (){
+const contacts = JSON.parse(localStorage.getItem('contacts'));
+if (contacts) {
+  this.setState({contacts: contacts})
+}
+
+}
+
+componentDidUpdate(prevProps, prevState){
+  if (this.state.contacts !== prevState.contacts) {
+    localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+  }
+}
+
   render(){
     const list = this.state.contacts.length;
    
